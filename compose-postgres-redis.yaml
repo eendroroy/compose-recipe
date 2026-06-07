@@ -1,0 +1,10 @@
+services:
+  postgres:
+    extends:
+      file: postgres/docker-compose.yaml
+      service: postgres
+
+  redis:
+    extends:
+      file: redis/docker-compose.yaml
+      service: redis
