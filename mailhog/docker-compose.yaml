@@ -1,0 +1,13 @@
+services:
+  mailhog:
+    image: mailhog/mailhog
+    container_name: mailhog
+    restart: unless-stopped
+    ports:
+      - "1025:1025"   # SMTP port — your app sends mail here
+      - "8025:8025"   # Web UI — view caught emails here
+    environment:
+      MH_STORAGE: maildir
+      MH_MAILDIR_PATH: /maildir
+    volumes:
+      - ./mount/mailhog:/maildir

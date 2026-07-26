@@ -1,0 +1,13 @@
+services:
+  oracle:
+    image: gvenzl/oracle-free:latest
+    container_name: oracle-23-free
+    restart: always
+    environment:
+      - ORACLE_PASSWORD=password # SYS/SYSTEM admin password
+      - APP_USER=local           # Schema user created automatically
+      - APP_USER_PASSWORD=local  # Password for your schema user
+    ports:
+      - "1521:1521"
+    volumes:
+      - ./mount/oradata/23free:/opt/oracle/oradata:Z
