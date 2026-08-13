@@ -1,0 +1,9 @@
+services:
+  oracle:
+    extends:
+      file: oracle/docker-compose.yaml
+      service: oracle
+  rabbitmq:
+    extends:
+      file: rabbitmq/docker-compose.yaml
+      service: rabbitmq
